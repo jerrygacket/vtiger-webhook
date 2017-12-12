@@ -45,7 +45,7 @@ switch ($domain) {
 switch ($action) {
     case 'lead':
         //создать лид
-		    $FormData['leadstatus'] = "Новый";
+	$FormData['leadstatus'] = "Новый";
         include 'addLead.php';
         break;
     case 'kontakt':
