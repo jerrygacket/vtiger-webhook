@@ -1,4 +1,6 @@
 <?php
+//Код из документации к API vtiger
+//https://wiki.vtiger.com/index.php/Webservices_tutorials
 
 require 'vendor/autoload.php';
 
