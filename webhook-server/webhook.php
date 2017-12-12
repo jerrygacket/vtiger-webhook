@@ -1,4 +1,6 @@
 <?php
+//вход в vtiger согласно документации к API
+include 'vtiger_login.php';
 
 if (php_sapi_name() == "cli") {
 	//~ echo 'cli'.PHP_EOL;
@@ -39,8 +41,6 @@ switch ($domain) {
 		$username = 'СидоровСС';
 		break;
 }
-
-include 'vtiger_login.php';
 
 switch ($action) {
     case 'lead':
