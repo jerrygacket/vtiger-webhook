@@ -1,0 +1,25 @@
+<?php
+$datestamp = date('Y-m-d H:i:s');
+$hook->setValue('datestamp', $datestamp);
+
+$site_url = $modx->getOption('site_url', $scriptProperties, null);
+$hook->setValue('site_url', $site_url);
+
+$referer = $_SERVER['HTTP_REFERER'];
+$remoteaddr = $_SERVER['REMOTE_ADDR'];
+$hook->setValue('referer', $referer);
+$hook->setValue('remoteaddr', $remoteaddr);
+
+//$hook->setValue('server', print_r($GLOBALS,true));
+
+$formValues = $hook->getValues();
+
+$url = 'http://vtiger-parser.fdp/99-webhook.php';
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $formValues);
+$body = curl_exec($ch);
+curl_close($ch);
+
+return true;
