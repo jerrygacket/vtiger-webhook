@@ -1,6 +1,9 @@
 # vtiger-webhook
 custom webhook for create leads, contacts and etc. from modx formit
+
 Вебхук для создания обращений, контактов и т.д. из компонента MODX FormIt.
+
+Использовались куски кода с сайта https://wiki.vtiger.com/index.php/Webservices_tutorials,  документация к FormIt и MODX
 
 На сайте:
  - Файл modx/crm-hook разместить в плагинах на сайте.
