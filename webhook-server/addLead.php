@@ -1,4 +1,6 @@
 <?php
+//Код поиска ид пользователей и создания обращения из документации к API vtiger
+//https://wiki.vtiger.com/index.php/Webservices_tutorials
 
 if (empty($FormData['lastname'])) {
 	echo 'Не указан обязательный параметр: Фамилия или название организации'.PHP_EOL;
