@@ -33,13 +33,15 @@ $groupname = 'Отдел продаж';
 switch ($domain) {
 	case 'site1.ru':
 		$username = 'ИвановИИ';
-		$recipients = array('ivanov@jabber.server.com');
+		$recipients = array('ivanov@jabber.server.com','petrov@jabber.server.com');
 		break;
 	case 'site2.ru':
 		$username = 'ПетровПП';
+		$recipients = array('ivanov@jabber.server.com','petrov@jabber.server.com');
 		break;
 	case 'site3.ru':
 		$username = 'СидоровСС';
+		$recipients = array('sidorov@jabber.server.com','petrov@jabber.server.com');
 		break;
 }
 
