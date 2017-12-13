@@ -7,16 +7,16 @@ use Fabiang\Xmpp\Protocol\Roster;
 use Fabiang\Xmpp\Protocol\Presence;
 use Fabiang\Xmpp\Protocol\Message;
 
-$address = 'tcp://ast.1dplab.ru:5222';
-$username = 'kanboard';
-$password = 'st0p9x@@';
-//$recipients = array('kryuchkovas@172.0.0.55');
+$address = 'tcp://jabber.server.com:5222';
+$username = 'user';
+$password = 'password';
 
 $options = new Options($address);
 $options->setUsername($username)
     ->setPassword($password)
-    ->setTo('172.0.0.55');
+    ->setTo('localhost'); //сюда пишется домен, где пользователи. То, что после собаки в логине.
 
+//нужно для ссл подключения
 $options->setContextOptions(['ssl' => ['verify_peer' => false,'verify_peer_name' => false]]);
 
 $client = new Client($options);
