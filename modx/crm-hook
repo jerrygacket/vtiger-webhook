@@ -14,7 +14,7 @@ $hook->setValue('remoteaddr', $remoteaddr);
 
 $formValues = $hook->getValues();
 
-$url = 'http://vtiger-parser.fdp/99-webhook.php';
+$url = 'http://webhook.server/webhook.php';
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 curl_setopt($ch, CURLOPT_TIMEOUT, 30);
