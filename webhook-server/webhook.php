@@ -33,6 +33,7 @@ $groupname = 'Отдел продаж';
 switch ($domain) {
 	case 'site1.ru':
 		$username = 'ИвановИИ';
+		$recipients = array('ivanov@jabber.server.com');
 		break;
 	case 'site2.ru':
 		$username = 'ПетровПП';
@@ -46,7 +47,13 @@ switch ($action) {
     case 'lead':
         //создать лид
 	$FormData['leadstatus'] = "Новый";
-        include 'addLead.php';
+        $jabbermessage = 'Новое обращение с сайта '.$domain.PHP_EOL;
+        $jabbermessage .= $FormData['lastname'].PHP_EOL;
+        $jabbermessage .= $FormData['email'].PHP_EOL;
+        $jabbermessage .= $FormData['phone'].PHP_EOL;
+        $jabbermessage .= $FormData['description'].PHP_EOL;
+        include 'addLead.php'; //создаем лид в црм
+	include 'sendJabberMessage.php'; //отправляем оповещение ответственному
         break;
     case 'kontakt':
         //добавить контакт;
