@@ -10,10 +10,10 @@ if (empty($FormData['lastname'])) {
 //****************************************************
 //Находим ид пользовталея или группы, которая будет ответственная за обращения
 if (empty($username)) {
-	$query = "select id from Groups where groupname=$groupname;";
+	$query = "select id from Groups where groupname='$groupname';";
 }
 else {
-	$query = "select id from Users where user_name=$username;"; //ищем по логину
+	$query = "select id from Users where user_name='$username';"; //ищем по логину
 }
 $queryParam = urlencode($query);
 $params = "sessionName=$sessionId&operation=query&query=$queryParam";
